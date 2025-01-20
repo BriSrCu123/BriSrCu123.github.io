@@ -1,13 +1,13 @@
-<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>数据结构|数组与广义表 | BriSrCu's blog</title><meta name="author" content="Brinley"><meta name="copyright" content="Brinley"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="四、串、数组和广义表（一）串零个或多个任意字符组成的有限序列 子串；空串；主串；字符位置；子串位置（第一个字符）；空格串！&#x3D;空串；串相等 ······略 KMP算法 （二）数组定义：n维同类型元素组成的序列，且连续存储 ElemType array[m][n] 1.数组抽象数据类型略 2.数组的存储结构1）静态存储 行主次序+列主次序 数组元素地址计算：（起始地址b，每个元素占L个字节）">
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>数据结构|数组与广义表 | BriSrCu's blog</title><meta name="author" content="Brinley"><meta name="copyright" content="Brinley"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="四、串、数组和广义表（一）串零个或多个任意字符组成的有限序列 子串；空串；主串；字符位置；子串位置（第一个字符）；空格串！&#x3D;空串；串相等 ······略 KMP算法 （二）数组定义：n维同类型元素组成的序列，且连续存储 ElemType array[m][n] 1.数组抽象数据类型略 2.数组的存储结构1）静态存储 行主次序+列主次序 数组元素地址计算：（起始地址b，每个元素占L个字节）  一维数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据结构|数组与广义表">
 <meta property="og:url" content="https://blog.brisrcu.cn/2025/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%95%B0%E7%BB%84%E4%B8%8E%E5%B9%BF%E4%B9%89%E8%A1%A8.html">
 <meta property="og:site_name" content="BriSrCu&#39;s blog">
-<meta property="og:description" content="四、串、数组和广义表（一）串零个或多个任意字符组成的有限序列 子串；空串；主串；字符位置；子串位置（第一个字符）；空格串！&#x3D;空串；串相等 ······略 KMP算法 （二）数组定义：n维同类型元素组成的序列，且连续存储 ElemType array[m][n] 1.数组抽象数据类型略 2.数组的存储结构1）静态存储 行主次序+列主次序 数组元素地址计算：（起始地址b，每个元素占L个字节）">
+<meta property="og:description" content="四、串、数组和广义表（一）串零个或多个任意字符组成的有限序列 子串；空串；主串；字符位置；子串位置（第一个字符）；空格串！&#x3D;空串；串相等 ······略 KMP算法 （二）数组定义：n维同类型元素组成的序列，且连续存储 ElemType array[m][n] 1.数组抽象数据类型略 2.数组的存储结构1）静态存储 行主次序+列主次序 数组元素地址计算：（起始地址b，每个元素占L个字节）  一维数">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://blog.brisrcu.cn/img/wallhaven-1pvvm9.jpg">
 <meta property="article:published_time" content="2025-01-20T05:43:14.000Z">
-<meta property="article:modified_time" content="2025-01-20T05:50:46.033Z">
+<meta property="article:modified_time" content="2025-01-20T09:39:12.383Z">
 <meta property="article:author" content="Brinley">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://blog.brisrcu.cn/img/wallhaven-1pvvm9.jpg"><link rel="shortcut icon" href="/img/head.png"><link rel="canonical" href="https://blog.brisrcu.cn/2025/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%95%B0%E7%BB%84%E4%B8%8E%E5%B9%BF%E4%B9%89%E8%A1%A8.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
@@ -55,7 +55,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2025-01-20 13:50:46'
+  postUpdate: '2025-01-20 17:39:12'
 }</script><script>(win=>{
       win.saveToLocal = {
         set: (key, value, ttl) => {
@@ -152,23 +152,23 @@
         }
       }
       detectApple()
-    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/head.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://blog.brisrcu.cn/img/wallhaven-1pvvm9.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="BriSrCu's blog"><span class="site-name">BriSrCu's blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">数据结构|数组与广义表</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-01-20T05:43:14.000Z" title="Created 2025-01-20 13:43:14">2025-01-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-01-20T05:50:46.033Z" title="Updated 2025-01-20 13:50:46">2025-01-20</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="数据结构|数组与广义表"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="四、串、数组和广义表"><a href="#四、串、数组和广义表" class="headerlink" title="四、串、数组和广义表"></a>四、串、数组和广义表</h2><h3 id="（一）串"><a href="#（一）串" class="headerlink" title="（一）串"></a>（一）串</h3><p>零个或多个任意<strong>字符</strong>组成的有限序列</p>
-<p>子串；空串；主串；字符位置；子串位置（第一个字符）；空格串！&#x3D;空串；串相等 ······略 KMP算法</p>
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/head.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://blog.brisrcu.cn/img/wallhaven-1pvvm9.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="BriSrCu's blog"><span class="site-name">BriSrCu's blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">数据结构|数组与广义表</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-01-20T05:43:14.000Z" title="Created 2025-01-20 13:43:14">2025-01-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-01-20T09:39:12.383Z" title="Updated 2025-01-20 17:39:12">2025-01-20</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="数据结构|数组与广义表"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="四、串、数组和广义表"><a href="#四、串、数组和广义表" class="headerlink" title="四、串、数组和广义表"></a>四、串、数组和广义表</h2><h3 id="（一）串"><a href="#（一）串" class="headerlink" title="（一）串"></a>（一）串</h3><p>零个或多个任意<strong>字符</strong>组成的有限序列</p>
+<p>子串；空串；主串；字符位置；子串位置（第一个字符）；空格串！=空串；串相等 ······略 KMP算法</p>
 <h3 id="（二）数组"><a href="#（二）数组" class="headerlink" title="（二）数组"></a>（二）数组</h3><p>定义：n维同类型元素组成的序列，且连续存储 <code>ElemType array[m][n]</code></p>
 <h4 id="1-数组抽象数据类型"><a href="#1-数组抽象数据类型" class="headerlink" title="1.数组抽象数据类型"></a>1.数组抽象数据类型</h4><p>略</p>
 <h4 id="2-数组的存储结构"><a href="#2-数组的存储结构" class="headerlink" title="2.数组的存储结构"></a>2.数组的存储结构</h4><p>1）静态存储</p>
 <p>行主次序+列主次序</p>
 <p>数组元素地址计算：（起始地址b，每个元素占L个字节）</p>
 <ol>
-<li>一维数组 $Loc(e)&#x3D;b+i*L$</li>
-<li>二维数组 $Loc(e)&#x3D;b+(i*n+j)*L$</li>
-<li>三维数组 $Loc(e)&#x3D;b+(i<em>n</em>p+j*p+k)*L$</li>
-<li>n维数组 $Local(e)&#x3D;b+ \left( \sum_{j&#x3D;1}^{n-1} i_j \cdot \prod_{k&#x3D;j+1}^{n} u_k + i_n \right) \cdot L$</li>
+<li>一维数组 $Loc(e)=b+i*L$</li>
+<li>二维数组 $Loc(e)=b+(i<em>n+j)</em>L$</li>
+<li>三维数组 $Loc(e)=b+(i<em>n</em>p+j<em>p+k)</em>L$</li>
+<li>n维数组 $Local(e)=b+ \left( \sum_{j=1}^{n-1} i_j \cdot \prod_{k=j+1}^{n} u_k + i_n \right) \cdot L$</li>
 </ol>
 <p>2）动态存储</p>
 <p>n维数组映射到一维数组</p>
 <h4 id="3-特殊矩阵的压缩存储"><a href="#3-特殊矩阵的压缩存储" class="headerlink" title="3.特殊矩阵的压缩存储"></a>3.特殊矩阵的压缩存储</h4><p>1）常规存储：二维存储</p>
-<p>2）对称矩阵：$a_{ij}&#x3D;a_{ji}$  -&gt; 只存上三角或下三角 -&gt; $n*(n+1)&#x2F;2$</p>
+<p>2）对称矩阵：$a_{ij}=a_{ji}$  -&gt; 只存上三角或下三角 -&gt; $n*(n+1)/2$</p>
 <p>存放在一个一维数组，算存储位置$a_{ij}$ </p>
 <p>3）三角矩阵:只存上三角或下三角</p>
 <p><img src="/2025/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%95%B0%E7%BB%84%E4%B8%8E%E5%B9%BF%E4%B9%89%E8%A1%A8.htm/image-20250114114854644.png" alt="image-20250114114854644"></p>
@@ -182,12 +182,12 @@
 <h4 id="5-十字链表"><a href="#5-十字链表" class="headerlink" title="5.十字链表"></a>5.十字链表</h4><p>优点：灵活的插入、删除、进行矩阵运算</p>
 <p><img src="/2025/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%95%B0%E7%BB%84%E4%B8%8E%E5%B9%BF%E4%B9%89%E8%A1%A8.htm/image-20250114141506773.png" alt="image-20250114141506773"></p>
 <p><img src="/2025/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%95%B0%E7%BB%84%E4%B8%8E%E5%B9%BF%E4%B9%89%E8%A1%A8.htm/image-20250114133726590.png" alt="image-20250114133726590"></p>
-<h3 id="（三）广义表"><a href="#（三）广义表" class="headerlink" title="（三）广义表"></a>（三）广义表</h3><p>定义：n&gt;&#x3D;0个元素的有限序列，每一个元素或是原子，或是广义表，可以<em>表中套表</em> ，计作$LS&#x3D;(a_1,a_2,\ldots,a_n)$，</p>
+<h3 id="（三）广义表"><a href="#（三）广义表" class="headerlink" title="（三）广义表"></a>（三）广义表</h3><p>定义：n&gt;=0个元素的有限序列，每一个元素或是原子，或是广义表，可以<em>表中套表</em> ，计作$LS=(a_1,a_2,\ldots,a_n)$，</p>
 <ul>
 <li>表头为$a_1$，表尾除了$a_1$外组成的表，</li>
 <li>长度：最外层所含元素个数</li>
 <li>深度：展开后所含括号的重数</li>
-<li>共享：$B&#x3D;(A)$</li>
+<li>共享：$B=(A)$</li>
 <li>基本运算：GetHead(L),GetTail(L)</li>
 <li>链式结构存储</li>
 </ul>
